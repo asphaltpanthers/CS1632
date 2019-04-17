@@ -59,13 +59,13 @@ _Although the professor will make a best effort to have the class topic on the d
 * DELIVERABLE 4 ASSIGNED
 
 ## Class 10 (July 17)
+* User Experience (guest lecture)
 * Stakeholder interaction
 * Quality strategy
 * READING: Chapter 21
 
 ## Class 11 (July 24)
 * Midterm 2
-* User Experience (guest lecture)
 
 ## Class 12 (July 31)
 * Security testing
