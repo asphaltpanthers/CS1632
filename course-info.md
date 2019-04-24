@@ -11,7 +11,7 @@ Room: IS 404
 Office Hours: 
 
 - 6148 Sennott Square
-- To be announced and by appointment
+- Wednesday 3:30 - 5:00
 
 Contact: CS1632@asphaltpanthers.com
 
