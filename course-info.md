@@ -13,7 +13,7 @@ Office Hours:
 - 6148 Sennott Square
 - Wednesday 3:30 - 5:00
 
-Contact: CS1632@asphaltpanthers.com
+Contact: dli6@pitt.edu
 
 Textbook: _A Friendly Introduction to Software Testing_ by Bill Laboon
 * PDF https://github.com/laboon/software-testing/blob/master/software-testing-laboon-ebook.pdf
