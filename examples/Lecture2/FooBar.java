@@ -1,6 +1,11 @@
 public class FooBar {
 	public static void main(String[] args) {
-		System.out.println(doSomething(Integer.parseInt(args[0])));
+		try {
+			System.out.println(doSomething(Integer.parseInt(args[0])));
+		}
+		catch (NumberFormatException e) {
+			System.out.println("Input parameter must be a string.");
+		}
 	}
 	
 	private static String doSomething(int x) {
