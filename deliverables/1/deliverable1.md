@@ -1,13 +1,13 @@
 # CS 1632 - Software Testing
-Fall Semester 2018
+Summer Semester 2019
 
-* DUE: 8 OCT 2018
+* DUE: 5 June 2019
 
 ## Deliverable 1
 
-For this assignment, you and a partner will determine a test plan for the simple game Super Connect-Four, based on the requirements listed in the file `requirements.md`.  There are several known defects in the software; you will need to find, report on, *and fix* at least three.  Additionally, a traceability matrix showing the mapping of test cases to requirements is required.
+For this assignment, you or you and a partner will determine a test plan for the simple game Super Connect-Four, based on the requirements listed in the file `requirements.md`.  There are several known defects in the software; you will need to find, report on, *and fix* at least three.  Additionally, a traceability matrix showing the mapping of test cases to requirements is required.
 
-Time will be given in class to group yourself into groups.  There should be two and only two members of a group.
+Time will be given in class to group yourself into groups.  There should be one or two members of a group.
 
 There should be *at least* twice as many test cases as requirements, although I would normally expect several test cases per requirement.  Note that this does not mean that you should aim to ONLY have this many.  I expect you to have enough test cases to properly test the application and find the defects.  However, if the number of test cases is more than 4x or 5x the number of requirements, you are probably overtesting.
 
@@ -21,22 +21,16 @@ I expect you to test three edge or corner cases as part of the test plan.  These
 
 It is expected that you actually execute the test plan in order to find the defects.  There are AT LEAST three.  Full credit will be given only to those who properly find, describe and fix at least three.  While you are not expected to find *all* of the defects, a reasonable test plan should definitely find at least three.  This is an intentionally target-rich environment.
 
-The repository you and your partner create should be private.  Besides the two people in the group, usernames `laboon` (the instructor) and `chenranli` (the TA, Chenran Li) should be added as collaborators.  The code should be entirely on the master branch.  Aside from the code, the only files in the repository should be the optional `README.md` file.
+The repository you and your partner create should be private.  Besides the people in the group, username `asphaltpanthers` (the instructor) should be added as collaborators.  The code should be entirely on the master branch.  Aside from the code, the only files in the repository should be the required`README.md` file.
 
-The name of your repository should be `D1`.  Thus, the GitHub link should be: `https://github.com/*YOURUSERNAME*/D1`.  The name of the main file should be `connect_four.rb`.  You may modify other names or add other files if you have a reason, but I should still be able to run the program by typing `ruby connect_four.rb *SIZE*` where *SIZE* is a positive integer.
+The name of your repository should be `ConnectFour`.  Thus, the GitHub link should be: `https://github.com/*YOURUSERNAME*/ConnectFour`. 
 
-Only one paper and one repository per group is necessary.
+Only one repository per group is necessary.
 
 ## Format
-Please hand in the paper to me with a cover page with:
-* The name of the project under test ("Super Connect Four")
-* The names of the people in the group and their GitHub usernames
-* A link to the private repository on GitHub with the fixed files (`connect_four.rb` and `game.rb`, along with any other Ruby files you may have created yourself)
-* The title "CS 1632 - DELIVERABLE 1: Test Plan and Traceability Matrix"
+The README.md file should contain a short introduction (a few paragraphs) in which you may note any concerns or difficulties you may have had or anticipate with the testing process.  You should also note why you considered certain test cases, how you thought of edge cases, etc.
 
-There should be a short introduction (a few paragraphs) in which you may note any concerns or difficulties you may have had or anticipate with the testing process.  You should also note why you considered certain test cases, how you thought of edge cases, etc.
-
-This should be followed ON A NEW PAGE by the list of test cases.  You may name or number them any way you wish, but be consistent.  You should write them out in this format -
+This should be followed by the list of test cases.  You may name or number them any way you wish, but be consistent.  You should write them out in this format -
 
 	IDENTIFIER:
 	DESCRIPTION:
@@ -46,9 +40,18 @@ This should be followed ON A NEW PAGE by the list of test cases.  You may name o
 
 The IDENTIFIER is some value which will UNIQUELY specify the test case.  It can be a number, word or any other mnemonic (e.g. TEST-WALL-SPACING, TEST-NUM-PROFESSORS).
 
-ON A SEPARATE PAGE, a traceability matrix should be provided mapping the test cases with their associated requirements.  Remember that all requirements should map to AT LEAST ONE test case, and all test cases should map to EXACTLY ONE requirement.
+Next, a traceability matrix should be provided mapping the test cases with their associated requirements.  Remember that all requirements should map to AT LEAST ONE test case, and all test cases should map to EXACTLY ONE requirement. The traceability matrix should look like this:
 
-Finally, ON A SEPARATE PAGE, list at least three defects found.  The defects should follow the defect reporting template:
+```
+Requirement #: List of test cases
+1: TestCase1, TestCase2
+2: TestCase3
+3: TestCase4
+4: TestCase5, TestCase6, TestCase7
+...
+```
+
+Finally, list at least three defects found.  The defects should follow the defect reporting template:
 
 	 SUMMARY:
 	 DESCRIPTION:
@@ -190,6 +193,8 @@ Note that the flip caused the X in column 1 to be in the bottom spot, causing th
 
 The program expects one argument, a nonnegative integer, to act as the size of the board.  For example, passing in the value "5" would create a 5 x 5 board (25 possible spots for the checkers).  If the player enters anything other than a single nonnegative integer, the program should display an error message informing the user of the issue and shut down.
 
+**NOTE: The examples show the program being ran as a ruby program. The output should be the same, but for this course the program is written in java.**
+
 ```
 [laboon@ekaterina ~/pitt/CS1632_Summer2018/deliverables/1]
 (23261) $ ruby connect_four.rb
@@ -228,10 +233,12 @@ ruby connect_four.rb *x*
 Player X, enter move >
 ```
 
-The specific requirements are listed in the file `requirements.txt`.
+The specific requirements are listed in the file `requirements.md`.
 
-Please feel free to email me at laboon at cs pitt edu or come to office hours to discuss any problems you have.
+Please feel free to email me at dli6 at pitt edu or come to office hours to discuss any problems you have.
 
 ## Sample Runs
 
 See file `sample_output.txt`
+
+**NOTE: The examples show the program being ran as a ruby program. The output should be the same, but for this course the program is written in java.**
