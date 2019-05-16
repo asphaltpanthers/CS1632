@@ -5,7 +5,7 @@ Summer Semester 2019
 
 ## Deliverable 1
 
-For this assignment, you or you and a partner will determine a test plan for the simple game Super Connect-Four, based on the requirements listed in the file `requirements.md`.  There are several known defects in the software; you will need to find, report on, *and fix* at least three.  Additionally, a traceability matrix showing the mapping of test cases to requirements is required.
+For this assignment, you or you and a partner will determine a test plan for the simple game Super Connect-Four, based on the requirements listed in the file `requirements.md`. Code for the ConnectFour game can be found here, https://github.com/asphaltpanthers/ConnectFour  There are several known defects in the software; you will need to find, report on, *and fix* at least three.  Additionally, a traceability matrix showing the mapping of test cases to requirements is required.
 
 Time will be given in class to group yourself into groups.  There should be one or two members of a group.
 
