@@ -21,7 +21,7 @@ I expect you to test three edge or corner cases as part of the test plan.  These
 
 It is expected that you actually execute the test plan in order to find the defects.  There are AT LEAST three.  Full credit will be given only to those who properly find, describe and fix at least three.  While you are not expected to find *all* of the defects, a reasonable test plan should definitely find at least three.  This is an intentionally target-rich environment.
 
-The repository you and your partner create should be private.  Besides the people in the group, username `asphaltpanthers` (the instructor) should be added as collaborators.  The code should be entirely on the master branch.  Aside from the code, the only files in the repository should be the required`README.md` file.
+The repository you and your partner create should be private.  Besides the people in the group, username `asphaltpanthers` (the instructor) should be added as collaborators.  The code should be entirely on the master branch.  Aside from the code, the only files in the repository should be the required`README.md` file. To make life easier, feel free to import the instructor's ConnectFour repo into your own private repo as a starting point, https://github.com/asphaltpanthers/ConnectFour.git.
 
 The name of your repository should be `ConnectFour`.  Thus, the GitHub link should be: `https://github.com/*YOURUSERNAME*/ConnectFour`. 
 
