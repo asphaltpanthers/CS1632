@@ -10,7 +10,7 @@ package BaryardWithDependencyInjection;
  * @author AsphaltPanthers
  */
 public class Cow {
-    public void moo() {
-        System.out.println("Mooo!");
+    public String moo() {
+        return "Mooo!";
     }
 }

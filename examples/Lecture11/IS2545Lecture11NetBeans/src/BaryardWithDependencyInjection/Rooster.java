@@ -10,7 +10,7 @@ package BaryardWithDependencyInjection;
  * @author AsphaltPanthers
  */
 public class Rooster {
-    public void crow() {
-        System.out.println("Crow!");
+    public String crow() {
+        return "Crow!";
     }
 }

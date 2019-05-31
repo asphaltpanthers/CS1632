@@ -14,14 +14,15 @@ import java.util.ArrayList;
 public class Barnyard {
     private final ArrayList<IAnimal> _animals;
     
-    public Barnyard(Cow cow, Pig pig, Rooster rooster) {
-        _animals = new ArrayList<>();
-        _animals.add(cow);
-        _animals.add(pig);
-        _animals.add(rooster);
+    public Barnyard(ArrayList<IAnimal> animals) {
+        _animals = animals;
     }
     
-    public void makeNoise() {
-        _animals.forEach(a -> a.vocalize());
+    public String makeNoise() {
+        String noise = "";
+        for (IAnimal animal : _animals) {
+            noise += animal.vocalize() + System.lineSeparator();
+        }
+        return noise;
     }
 }

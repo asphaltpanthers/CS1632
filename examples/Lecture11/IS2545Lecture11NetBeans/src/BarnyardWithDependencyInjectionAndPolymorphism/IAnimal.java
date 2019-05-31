@@ -10,5 +10,5 @@ package BarnyardWithDependencyInjectionAndPolymorphism;
  * @author AsphaltPanthers
  */
 public interface IAnimal {
-    void vocalize();
+    String vocalize();
 }

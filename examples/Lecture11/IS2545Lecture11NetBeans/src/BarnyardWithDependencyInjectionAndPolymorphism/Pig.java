@@ -10,7 +10,7 @@ package BarnyardWithDependencyInjectionAndPolymorphism;
  */
 public class Pig implements IAnimal {
     @Override
-    public void vocalize() {
-        System.out.println("Oink!");
+    public String vocalize() {
+        return "Oink!";
     }
 }

@@ -10,7 +10,7 @@ package BarnyardWithNoDependencyInjection;
  * @author AsphaltPanthers
  */
 public class Pig {
-    public void oink() {
-        System.out.println("Oink!");
+    public String oink() {
+        return "Oink!";
     }
 }
