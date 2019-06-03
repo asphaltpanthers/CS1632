@@ -104,55 +104,26 @@ The program should use appropriate object-oriented design.  Think of what object
 
 For this project, you should endeavour to get a good sampling of different equivalence classes and success/failure cases.
 
-If you are not familiar with seeds for random number generators, recall that in the absence of external input, a computer can only generate data deterministically.  This seed will act as our "external input".  I recommend you review the Ruby Random class: http://ruby-doc.org/core-2.5.0/Random.html  Remember that running your program twice with the same seed should *always* produce the same output.
+If you are not familiar with seeds for random number generators, recall that in the absence of external input, a computer can only generate data deterministically.  This seed will act as our "external input".  I recommend you review the Java Random class: <https://docs.oracle.com/javase/8/docs/api/java/util/Random.html>  Remember that running your program twice with the same seed should *always* produce the same output.
 
 Before each test, add some comments (two or three sentences, on average) explaining what the test is checking.
 
 ## Exiting With Exit Code
 
-To exit with a specific exit code, just use the keyword exit with one integer argument, e.g. `exit 5` will cause the current program to cease execution and exit with exit code 5.  You can verify the exit code by immediately running the following command (in bash or most other OS X / Linux / Unix-like shells):
-
-```
-echo $?
-```
-
-Or in Windows:
-
-```
-echo %errorlevel%
-```
+To exit with a specific exit code, just use the method `System.exit(int status)` with one integer argument, e.g. `System.exit(5)` will cause the current program to cease execution and exit with exit code 5.
 
 ## Test Execution
 
-I should be able to run ALL of the tests by typing `ruby all_tests.rb`.
-
-In this file, start simplecov and require_relative all of the other test files, e.g.
-
-```
-require 'simplecov'
-SimpleCov.start
-
-require_relative 'foo_test'
-require_relative 'bar_test'
-require_relative 'baz_test'
-```
-
-Running `all_tests.rb` will now give you coverage statistics for the entire project.
-
-Note - do not do SimpleCov.start in foo_test, bar_test, etc. Just one time in main_test!
-
-If you are getting different results each time you run, make sure that you are not exit-ing in the middle of your production code. This will cause minitest to end its run. Since tests are run in pseudorandom order, your test suite will end as soon as exit is called, meaning you will get wildly varying results each time depending on when the test case which calls the exiting method is run.
+I should be able to run ALL of the tests from the Eclipse JUnit test runner.
 
 ## Grading
 I remind you that grammar and good code count as well as functionality.  By good code, I mean: no commented-out code unless there's an EXPLICIT reason, properly indented code, no misspelled words or bad grammar, in comments or summaries, etc.
 
-The program must be run by typing `ruby gold_rush.rb *seed* *number of prospectors*`  at the command line.  It will be run using Ruby 2.5.0 and so I recommend you ensure that you have the same version, although there should be no problems if you are using Ruby 2.4.0 or above.
+The program must be run from Eclipse or by typing `java GoldRush *seed* *number of prospectors*`  at the command line in the Eclipse `bin` directory. 
 
-The unit tests must be run by typing the following at the command line: `ruby all_tests.rb`.  `all_tests.rb` should require_relative any class-based test files that you use and run them as well.  All tests should be run by this one command.
+You may ignore the main `GoldRush.java` file IF AND ONLY IF it has 20 or fewer lines of code.  This will be very useful when developing your tests, so I recommend you look back at D1 and the sample code to see how they are laid out in order to see how to minimize the number of lines in `gold_rush.rb`.
 
-You may ignore the main `gold_rush.rb` file IF AND ONLY IF it has 20 or fewer lines of code.  This will be very useful when developing your tests, so I recommend you look back at D1 and the sample code to see how they are laid out in order to see how to minimize the number of lines in `gold_rush.rb`.
-
-You will lose points if the program itself runs when I try to run the tests.  If you are having trouble with this, remember that any code that you require by a test file will be run.  Having a very small "main" file, which "require_relatives" many files that only have classes, will help you avoid this situation - you can then just test the individual class files and treat the `gold_rush.rb` file as an untested `public static void main`.
+You will lose points if the program itself runs when I try to run the tests.  If you are having trouble with this, remember that any code that you require by a test file will be run.  Having a very small "main" file, which "imports" many files that only have classes, will help you avoid this situation - you can then just test the individual class files and treat the `GoldRush.java` file as an untested `public static void main`.
 
 Unlike D1, you do NOT need to precisely line up requirements with test cases or develop a traceability matrix, but requirements are still useful for doing exploratory testing of your finished product.
 
