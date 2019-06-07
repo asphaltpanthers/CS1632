@@ -1,4 +1,4 @@
-# CS 1632 Midterm 1 Exam Study Guide - Fall 2018
+# CS 1632 Midterm 1 Exam Study Guide -  Spring 2019
 
 ## TESTING THEORY AND TERMINOLOGY
 * Equivalence class partitioning
