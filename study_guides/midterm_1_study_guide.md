@@ -13,7 +13,7 @@
     * **edge case**: a test case for functionality of a system which can be expected, but is probably rare and will likely require additional dev work(sad path TT.TT)
     * **corner case**: a test case using ludacris input (sad path TT.TT)
 * Static vs Dynamic testing
-    * **static testing**: testing the system w/o executing any code (e.g., code analysis, modelling tools)
+    * **static testing**: testing the system w/o executing any code (e.g., code analysis (Linter), modelling tools); flags code smells
     * **dynamic testing**: testing the system by executing it (e.g., unit testing, black-box testing)
 * Black/White/Grey box testing
     * **black box testing**: testing with no knowledge of how the systems works, as a user would (e.g., manual)
@@ -22,11 +22,11 @@
 ## REQUIREMENTS ANALYSIS
 * What makes a good or bad requirement?
   * Good
-   * complete
-   * consistent
-   * unambiguous
-   * quantitative
-   * feasible to test
+   * complete - cover the complete operating system
+   * consistent - should be contrained by the laws of science/physics
+   * unambiguous - precision = important
+   * quantitative - includes how many
+   * feasible to test - (e.g., with time and resource constrains)
   * Bad = opposite of Good
 * Functional vs Non-Functional Requirements  (Quality Attributes)
   * **functional requirements**: state what the system should do
@@ -36,6 +36,10 @@
 * Verification vs validation
  * **verification**: build software right (i.e., no bugs)
  * **validation**: build righ software (i.e., user will like)
+* Includes: identifiers, test case, preconditions, input values, execution steps, output values, postconditions
+* Status: passed, fialed, paused, running, blocked, error
+* Bad code != defects ("technical debt")
+* fuzz testing - sending in randomly generated data (which may/may not conform to expected input in different ways) and ensuring system still operates correctly
 
 ## DEFECT REPORTING
 * Be prepared to report a defect based on a test case
@@ -43,7 +47,7 @@
   * SUMMARY, DESCRIPTION, REPRODUCTION STEPS, EXPECTED BEHAVIOR, OBSERVED BEHAVIOR
   * Optionally: SEVERITY/IMPACT, NOTES
   * Levels of severity: BLOCKER, CRITICAL, MAJOR, NORMAL, MINOR, TRIVIAL
-* Coding mistakes vs defects
+* Coding mistakes vs defects: mistake? (imperfect, not way of doing) 
 
 ## Smoke, Exploratory, and Path-based testing
 * Define all of these concepts
