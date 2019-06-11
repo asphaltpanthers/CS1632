@@ -125,3 +125,85 @@
     5. DRY
     6. use dominant paradigm for framework
 * The DRY Principle
+
+
+## CODE EXAMPLES
+    1. Must have:
+      - ```import org.junit.*;```, which includes:
+        - ```.Test;``` - will later user @Test
+        - ```.Assert;```
+        - ```.After;``` (post-conditions, includes: any tear-down stuff) - will later use @After
+        - ```.Before;``` (pre-conditions) - will later use @Before
+      - import org.mockito.*; (for mocks - i.e., fake objects)
+
+    2. Going to need a ```public class {{insert Name}}```
+    3. Test assertions
+      - pass w/ true: ```Assert.pass(trueStmt);```
+      - pass w/ fail (i.e., succeeding by failing: ```Assert.fail("expect 2 fail");```
+      - pass if equal: ```assertEquals(1, alsoShouldEqualOne);```
+      - pass if null: ```assertNull(shouldBeNull);``
+      - pass if same (i.e., same place in memory): ```assertSame(ll.getFront(), testNode);```
+    4. May need to add ```@SuppressWarnings("unchecked")``` (when creating mocks)
+    5. Creating a Mock:
+      - use ```@Mock``` then declare object and set = to ```Mockito.mock(_insertObjType_.class);```
+         ``` 
+         @Mock
+         ObjectType nameOfObject = Mockito.mock(ObjectType.class);
+         ```
+      - decare ```@Before``` with initialization of mock object -> ```MockitoAnnotations.initMocks(nameOfObject);```
+      
+         ```
+         @Before
+         public void setUp() throws Exception {
+           MockitoAnnotations.initMocks(nameOfObject);
+         }
+         ```
+     6. Testing with Mockito (note: will use the .Assert library to assert values)
+       - verify ensures whether a mock method is being called with required arguments or not.
+          - E.g., ```	Mockito.verify(objectName).methodToTest(parameters, for, method, being, tested);```
+  
+https://github.com/asphaltpanthers/CS1632/blob/master/examples/Lecture8/AssertFailExample.java
+```
+import org.junit.Test;
+import org.junit.Assert;
+
+public class AssertFailExample {
+	@Test
+	public void DivideByZeroTest() {
+		try {
+			int result = 5 / 0;
+			***Assert.fail("Expected division by zero to throw exception.");***
+		} catch(Exception e) { }
+	}
+}
+```
+https://github.com/asphaltpanthers/CS1632/blob/master/examples/Lecture8/CallRealMethod/CallRealMethodTest.java
+```
+@Test
+	public void testWithoutCallRealMethod() {
+		//Create our mocks.
+		CallRealMethod obj = Mockito.mock(CallRealMethod.class); //Create double.
+		Mockito.when(obj.methodThatNeedsStubbed()).thenReturn(1); //Create stub.
+		
+		int result = obj.methodUnderTest();
+		
+		//This assertion will fail because when we create the mock CallRealMethod object, we stubbed the methodThatNeedsStubbed(),
+		//but we didn't stub the methodUnderTest(). It returns the default value of 0 and thus the test fails.
+		assertEquals(1, result);
+	}
+```
+```
+	@Test
+	public void testWithCallRealMethod() {
+		//Create our mocks.
+		CallRealMethod obj = Mockito.mock(CallRealMethod.class); //Create double.
+		Mockito.when(obj.methodThatNeedsStubbed()).thenReturn(1); //Create stub.
+		Mockito.when(obj.methodUnderTest()).thenCallRealMethod(); //Instruct the double to call the real method for methodUnderTest().
+		
+		int result = obj.methodUnderTest();
+		
+		//This time the assertion passes because we instructed the double to use the actual methodUnderTest() method for this test.
+		assertEquals(1, result);
+	}
+```
+```
