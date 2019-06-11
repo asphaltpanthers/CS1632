@@ -134,30 +134,36 @@
 		* `.Test;` - will later user @Test
 		* `.Assert;`
 		* `.After;` (post-conditions, includes: any tear-down stuff) - will later use @After 
-		* `.Before;` (pre-conditions) - will later use @Before
-      	* `import org.mockito.*;` (for mocks - i.e., fake objects)
+		* `.Before;` (pre-conditions, includes anything that must be run b4, i.e., setup) - will later use @Before
+      	* `import org.mockito.*;` (for mocks - i.e., fake objects, a specific kind of double)
+	* note: we can also use `static` to not have to write `Mockito.` and `Assert.` every time (e.g., `import static org.junit.Assert.*;`, `import static org.mockito.*;` 
 
 2. Going to need a `public class {{insert Name}}`
 
 3. Test assertions
       	* pass w/ true: `Assert.pass(trueStmt);`
       	* pass w/ fail (i.e., succeeding by failing: `Assert.fail("expect 2 fail");`
-      	* pass if equal: `assertEquals(1, alsoShouldEqualOne);`
+      	* pass if equal: `assertEquals(1, alsoShouldEqualOne);` or `assertEquals(ture, result);`
       	* pass if null: `assertNull(shouldBeNull);`
-      	* pass if same (i.e., same place in memory): `assertSame(ll.getFront(), testNode);`
+      	* pass if same (i.e., same place in memory, same object referenced): `assertSame(ll.getFront(), testNode);`
+	* notes: 
+		* test should look for positive behavior
+		* a junit test only fils if an assertion fails, otherwise it always passes (so don't forget to add an assertion)
+		* pure (functions w/o side effects) versus impure (have side effects)
+	
 	
 4. May need to add `@SuppressWarnings("unchecked")` (when creating mocks)
 
 5. Creating a Mock:
 	* use `@Mock` then declare object and set = to `Mockito.mock(_insertObjType_.class);`
-	
+	* decare `@Before` with initialization of mock object -> `MockitoAnnotations.initMocks(nameOfObject)`
+
          ``` 
          @Mock
          ObjectType nameOfObject = Mockito.mock(ObjectType.class);
-         ```
-	 
-      	* decare `@Before` with initialization of mock object -> `MockitoAnnotations.initMocks(nameOfObject);`
-      
+         
+	 ```
+	       
          ```
          @Before
          public void setUp() throws Exception {
@@ -166,9 +172,17 @@
          ```
 	 
 6. Testing with Mockito (note: will use the .Assert library to assert values)
-       * verify ensures whether a mock method is being called with required arguments or not.
-       	* E.g., `Mockito.verify(objectName).methodToTest(parameters, for, method, being, tested);`
-  
+       * verify ensures whether a mock method is being called with required arguments or not (i.e., hides assertions w/in). If verification fails the test case will fail (as it would w/ assertion)
+       	* E.g., `Mockito.verify(objectName.methodToTest(parameters, for, method, being, tested));`
+	* can also use `times()`, e.g., `verify(objectName.methodBeingTested()), times(10));`
+	* could use `.never()` or `.times(0)`
+       * testing stubs use when().thenReturn(); -> `when(nameOfObject.methodStubbed()).thenReturn(returnValue);`
+
+7. Testing system output
+	* `setOut()`
+	* `System.out`
+	* `System.err` in `ByteArrayOutputStream`
+	
 https://github.com/asphaltpanthers/CS1632/blob/master/examples/Lecture8/AssertFailExample.java
 ```
 import org.junit.Test;
