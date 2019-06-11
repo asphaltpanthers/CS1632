@@ -4,7 +4,7 @@
 * Equivalence class partitioning
   * **equivalence class**: a group of input values, which provide similar output
   * **equivalence class partitioning**: separating a specific functionality into distinct equivalence classes based on input values.
-    * must maintain strict partitioning (i.e., nothing should be undefined)
+   * must maintain strict partitioning (i.e., nothing should be undefined)
 * Boundary and interior values
     * **boundary values**: a value which is on the boundry of equivalence classes
     * **interior values**: a value that is not a boundry value in an equivalence class
@@ -128,29 +128,35 @@
 
 
 ## CODE EXAMPLES
-    1. Must have:
-      - ```import org.junit.*;```, which includes:
-        - ```.Test;``` - will later user @Test
-        - ```.Assert;```
-        - ```.After;``` (post-conditions, includes: any tear-down stuff) - will later use @After
-        - ```.Before;``` (pre-conditions) - will later use @Before
-      - import org.mockito.*; (for mocks - i.e., fake objects)
 
-    2. Going to need a ```public class {{insert Name}}```
-    3. Test assertions
-      - pass w/ true: ```Assert.pass(trueStmt);```
-      - pass w/ fail (i.e., succeeding by failing: ```Assert.fail("expect 2 fail");```
-      - pass if equal: ```assertEquals(1, alsoShouldEqualOne);```
-      - pass if null: ```assertNull(shouldBeNull);``
-      - pass if same (i.e., same place in memory): ```assertSame(ll.getFront(), testNode);```
-    4. May need to add ```@SuppressWarnings("unchecked")``` (when creating mocks)
-    5. Creating a Mock:
-      - use ```@Mock``` then declare object and set = to ```Mockito.mock(_insertObjType_.class);```
+1. Must have:
+	* `import org.junit.*;`, which includes:
+		* `.Test;` - will later user @Test
+		* `.Assert;`
+		* `.After;` (post-conditions, includes: any tear-down stuff) - will later use @After 
+		* `.Before;` (pre-conditions) - will later use @Before
+      	* `import org.mockito.*;` (for mocks - i.e., fake objects)
+
+2. Going to need a `public class {{insert Name}}`
+
+3. Test assertions
+      	* pass w/ true: `Assert.pass(trueStmt);`
+      	* pass w/ fail (i.e., succeeding by failing: `Assert.fail("expect 2 fail");`
+      	* pass if equal: `assertEquals(1, alsoShouldEqualOne);`
+      	* pass if null: `assertNull(shouldBeNull);`
+      	* pass if same (i.e., same place in memory): `assertSame(ll.getFront(), testNode);`
+	
+4. May need to add `@SuppressWarnings("unchecked")` (when creating mocks)
+
+5. Creating a Mock:
+	* use `@Mock` then declare object and set = to `Mockito.mock(_insertObjType_.class);`
+	
          ``` 
          @Mock
          ObjectType nameOfObject = Mockito.mock(ObjectType.class);
          ```
-      - decare ```@Before``` with initialization of mock object -> ```MockitoAnnotations.initMocks(nameOfObject);```
+	 
+      	* decare `@Before` with initialization of mock object -> `MockitoAnnotations.initMocks(nameOfObject);`
       
          ```
          @Before
@@ -158,9 +164,10 @@
            MockitoAnnotations.initMocks(nameOfObject);
          }
          ```
-     6. Testing with Mockito (note: will use the .Assert library to assert values)
-       - verify ensures whether a mock method is being called with required arguments or not.
-          - E.g., ```	Mockito.verify(objectName).methodToTest(parameters, for, method, being, tested);```
+	 
+6. Testing with Mockito (note: will use the .Assert library to assert values)
+       * verify ensures whether a mock method is being called with required arguments or not.
+       	* E.g., `Mockito.verify(objectName).methodToTest(parameters, for, method, being, tested);`
   
 https://github.com/asphaltpanthers/CS1632/blob/master/examples/Lecture8/AssertFailExample.java
 ```
