@@ -7,7 +7,7 @@ DUE 3 July
 
 For this assignment, you or you and a partner will write systems-level, automated black-box tests for a web app using Selenium. 
 
-Test code should be on a private Github repository, and I should be added as a collaborator by the beginning of class on the due date.
+Test code should be on a private Github repository named 'CS1632_Deliverable3', and I should be added as a collaborator by the beginning of class on the due date.
 
 The web app is located here: <https://cs1632summer2019.herokuapp.com/>
 
