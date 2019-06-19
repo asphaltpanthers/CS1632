@@ -171,6 +171,4 @@ public class HelloWorldTest extends BaseTest { //Note: how it extends the BaseCl
   * Can use personas, user stories, etc.
   * As a <persona> I want to <perform this action> so that <reason/benefit>
   * Scenarios
-  * Given / When / Then <-- Connextra format (Dustin mentioned this was important); pre-condititions, when, post-condition
-
-
+  * Given / When / Then <-- Connextra format (Dustin mentioned this was important); pre-condititions, execution, post-condition
