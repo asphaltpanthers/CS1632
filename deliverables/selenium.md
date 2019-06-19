@@ -58,11 +58,24 @@
 * Project - clone this repo: https://github.com/asphaltpanthers/CS1632_Deliverable3
  * You could also start from scratch... (see presentation for notes)
  * Selenium JAR file in class path
- * WebDriver <- to manipulate browser (one for every browser)
-* 
-
-
-
-
-
-
+* WebDriver <- to manipulate browser (one for every browser)
+ * Setting up driver
+  * `WebDriver driver = HTMLUnitDriver();` // headless, lightweight and faster
+  * `WebDriver driver = new FirefoxDriver();` // actual browser, the most supported driver
+  * //+other drivers 
+ * Navigate to a webpage
+  * `driver.get("https://www.google.com");`
+ * WebElements = anything that makes up a page (<div>, labels, buttons, images, pages)
+  * Driver loads all of there references into hte driver object
+  * Now we can use object selection  methods to get it to do something
+ * Must select element
+  * `driver.findElement()` to find a **specific** WebElement on a page
+  * `driver.findElements()` for more than one WebElement on a page
+  * the (unique) id is always preferred to test agains
+ * Xpath selectors = way of search XMl structure in order to find a tag that we are interested in 
+  * `//h2` xpath that searches for an h2 tag that exists anywhere
+  * `//h1[1]` index locator, give us the second h1 (DON'T USE, it's just brittle)
+  * `//[@id='sub-header']` search anywhere and find the id (@ = some attribute is coming) and will return that element
+* Manipulating web browser
+  * Most common actions `textBox.sendKey("Send text in input box");` and `randomElement.click();`
+  * `F12` or `ctrl+i` Chrome Dev Tools -> Elements panel (use Xpath in the box)
