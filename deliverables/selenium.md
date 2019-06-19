@@ -63,7 +63,7 @@
   * //+other drivers 
  * Navigate to a webpage
   * `driver.get("https://www.google.com");`
- * WebElements = anything that makes up a page (<div>, labels, buttons, images, pages)
+ * WebElements = anything that makes up a page (div tags, labels, buttons, images, pages)
   * Driver loads all of there references into hte driver object
   * Now we can use object selection  methods to get it to do something
  * Must select element
@@ -162,5 +162,15 @@ public class HelloWorldTest extends BaseTest { //Note: how it extends the BaseCl
     }
 }
 ```
+**Behaviour Driven Development:**
+* evolution of TDD, but BDD != TDD
+* focuses on the general expected behavior of the user 
+* TDD focuses on writing good code
+* BDD focuses on building the right product
+* ATDD = acceptance test-driven development (once code is shipped, make sure that customer requirements are met)
+  * Can use personas, user stories, etc.
+  * As a <persona> I want to <perform this action> so that <reason/benefit>
+  * Scenarios
+  * Given / When / Then <-- Connextra format (Dustin mentioned this was important); pre-condititions, when, post-condition
 
 
