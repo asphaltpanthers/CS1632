@@ -39,7 +39,9 @@ public class FlightControllerTest {
         SqlContext mockContext = mock(SqlContext.class);
         when(mockContext.ExecuteQuery(any(String.class))).thenReturn(returnValue);
         
-        FlightController controller = new FlightController(mockContext);
+        FlightController controller = mock(FlightController.class);
+        when(controller.GetAllAirplanes()).thenCallRealMethod();
+        when(controller.GetAirplane()).thenReturn(new Airplane("Piper Cub", 2, 1, 2));
         List<Airplane> airplanes = controller.GetAllAirplanes();
         Assert.assertTrue(!airplanes.isEmpty());
         

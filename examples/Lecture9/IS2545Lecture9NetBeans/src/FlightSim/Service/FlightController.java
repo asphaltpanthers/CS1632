@@ -22,6 +22,11 @@ public class FlightController {
     }
     
     public List<Airplane> GetAllAirplanes() throws SQLException {
+        GetAirplane();
         return _context.ExecuteQuery("select * from airplanes");
+    }
+    
+    public Airplane GetAirplane() {
+        return null;
     }
 }
