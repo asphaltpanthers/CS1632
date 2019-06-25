@@ -44,12 +44,16 @@ _Although the professor will make a best effort to have the class topic on the d
 
 ## Class 7 (June 26)
 * Web testing with REST
-* Web testing in-class exercise
+* Stakeholder interaction
+* Quality strategy
+* READING: Chapter 21
 
 ## Class 8 (July 3)
 * Pairwise and combinatorial testing
 * Stochastic and property-based testing
+* Security testing
 * READING: Chapter 17-18
+* READING: Chapter 20
 * DELIVERABLE 3 DUE
 
 ## Class 9 (July 10)
@@ -60,15 +64,9 @@ _Although the professor will make a best effort to have the class topic on the d
 
 ## Class 10 (July 17)
 * User Experience (guest lecture)
-* Stakeholder interaction
-* Quality strategy
-* READING: Chapter 21
 
 ## Class 11 (July 24)
 * Midterm 2
 
 ## Class 12 (July 31)
-* Security testing
-* Security testing in-class exercise
-* READING: Chpater 20
 * DELIVERABLE 4 DUE
