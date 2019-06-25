@@ -1,3 +1,6 @@
 *.class
 /examples/Lecture13/IS2545Lecture13NetBeans/nbproject/private/
 /examples/Lecture13/IS2545Lecture13NetBeans/build/
+/examples/Lecture15/IS2545Lecture15NetBeans/build/
+/examples/Lecture15/IS2545Lecture15NetBeans/dist/
+/examples/Lecture15/IS2545Lecture15NetBeans/nbproject/private/
