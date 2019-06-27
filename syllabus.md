@@ -67,6 +67,7 @@ _Although the professor will make a best effort to have the class topic on the d
 
 ## Class 11 (July 24)
 * Midterm 2
+* DELIVERABLE 4 DUE
 
 ## Class 12 (July 31)
-* DELIVERABLE 4 DUE
+* Cancelled
