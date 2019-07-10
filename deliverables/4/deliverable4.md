@@ -18,7 +18,9 @@ And returns the result like this:
 
 `{ "response": <tangent of 1> }`
 
+The only performance threshold the customer of the tangent endpoint has is this.
 
+- A typical user for the tangent endpoint will make a request every 10 milliseconds and the response time must be less than 300 milliseconds. Anything less than this is unacceptable.
 
 ## Format
 
@@ -50,6 +52,20 @@ Finally the performance test results document should contain the results of the 
 - What is the maximum throughput of the tangent endpoint?
 - What is the average response times of the tangent endpoint at its maximum throughput?
 - How much of your systems resources were consumed during the tests (cpu, memory, etc).
-- The customer for the tangent endpoint has the following performance threshold.
-  - A typical user for the tangent endpoint will make a request every 10 milliseconds and the response time must be less than 300 milliseconds. Anything less than this is unacceptable.
-  - What is the maximum number of users that can use the system?
+- Keeping the customers performance threshold in mind, what is the maximum number of users that can use the system?
+
+There are no right or wrong answers to these questions. Your task is to find the KPIs of your system.
+
+You will be graded on how well your test plan describes the testing you will execute and how well your test plan demonstrates your knowledge of performance testing.
+
+You will be graded on your test selection. You should execute enough tests to thoroughly performance test the system.
+
+You will be graded on the content of your results. Can I read the results and clearly understand its conclusions and the logic used to reach those conclusions.
+
+Written communication is key with performance testing. Performance testing is complicated stuff and its important that its documentation is clear and precise.
+
+## Grading
+
+- Performance test plan - 40%
+- JMeter tests - 20%
+- Performance test results - 40%
