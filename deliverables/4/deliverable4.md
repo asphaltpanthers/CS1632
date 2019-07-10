@@ -62,7 +62,7 @@ You will be graded on your test selection. You should execute enough tests to th
 
 You will be graded on the content of your results. Can I read the results and clearly understand its conclusions and the logic used to reach those conclusions.
 
-Written communication is key with performance testing. Performance testing is complicated stuff and its important that its documentation is clear and precise.
+Written communication is key with performance testing. Performance testing is complicated stuff and its important that its documentation is clear and precise. Often, the people reading performance testing results are non-technical stakeholders. It's important that these stakeholders can read and understand the results of the tests.
 
 ## Grading
 
