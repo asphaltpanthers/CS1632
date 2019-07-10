@@ -43,7 +43,7 @@ In a folder named JMeter, store all the JMeter tests that you executed. A good p
 - Stress test
 - Realistic load test
 
-Instructions for setting up JMeter can be found in the JMeterREADME.docx file. I've created some JMeter tests to get you started in the JMeter folder.
+Instructions for setting up JMeter can be found in the JMeterREADME.docx file. I've created a JMeter test to get you started in the JMeter folder.
 
 If you get the `java.net.BindException: Address already in use: connect` error message, a solution can be found here, https://www.baselogic.com/2011/11/23/solved-java-net-bindexception-address-use-connect-issue-windows/.
 
