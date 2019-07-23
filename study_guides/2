@@ -1,0 +1,255 @@
+# CS 1632 Midterm 2 Exam Study Guide - Fall 2018
+
+## WEB TESTING
+* Be able to explain how you would test a web page with Selenium
+* Understand object selection method best practices (id and xpath).
+* Implicit vs explicit waits
+* Automated HTTP testing vs automated UI testing
+
+## COMBINATORIAL TESTING
+* Be able to fill out a truth table for pairwise testing.
+
+## PERFORMANCE TESTING
+* Service-Oriented: measure how well a system is providing a service to users. USER'S POV 
+* Efficiency-Oriented Indicators: measure how well the system makes use of computational resources. DEV POV
+* Availability: how available is the system to the user? % of time access?
+* Response Time: How quickly does the system respond to user input?
+* Throughput: How many events can occur and be processed in a givne amount of time?
+* Utilization:  What percentage of computing resources are used to perform a task?
+
+* Performance targets (quantitative values the rep the minimum level of performance) that the performance thresholds should reach, KPIs - understand and be able to generate!
+	
+* Understand different concepts of time: user, system, total, real
+	* user = user code executes
+	* system = kernel code is executing
+	* user + system = total
+	* real = real time/ wall time
+	
+* Understand n 9's (e.g., 5 9s vs 6 9s)
+	 * 1 nine: 90% available (36.5 days/year)
+	 * 2 nines: 99% available (3.65 d/y)
+	 * 3 nines: 99.9% available (8.76 h/y)
+	 * ...
+	 * 9 nines: 99.9999999% (31.5 ms / y)
+	 
+* Load testing - baseline, soak/stability, stress tests
+
+
+## INTERACTING WITH STAKEHOLDERS
+* Be able to name some stakeholders and what is important to them
+	* upper management = $ (P&L)
+	* project management = Dates/ timelines
+	* testers = quality
+	* other developers = implementation
+
+## TESTING STRATEGY
+* Understand the testing pyramid
+	* UI - GUI, Selenium (from customers) (end-to-end) 
+	* Unit - executes a specific, singular method
+	* Integration - Neither 
+	
+* Understand common anti-patterns (ice cream cone, cupcake)
+	* Ice Cream Cone / Waterfall = Mostly UI Tests
+	* Cupcake = Mostly Manual
+	* Agile = Mostly Unit tests
+	
+## BDD
+* Focus on building a good product
+* Given / When / Then 
+* Be able to write a user story using the Connextra template.
+	*  As a <persona> I want to <perform an action> so that <reason / benefit>
+
+
+## SECURITY TESTING
+* Be able to name different types of security vulnerabilities based on a description.
+	* Malware
+	* Bacteria - program that consumes system resources
+	* Logic bomb - code w/in a program which executes an authorized function
+	* Trapdoor - secret access
+	* Trojan horse - program that pretends to be another program
+	* Virus - replicates w/ Human intervention
+	* Work - w/o human intervention
+	* Zombie
+	* Bot network
+	* XSS
+	* SQL Injection
+	* Secure Object Reference (shipment is late)
+	
+### InfoSec Triad
+* **Confidentiality** means that no unauthorized users may read any data
+* **Integrity** means that no unauthorized users can write data
+* **Availability** means that the system must be available to authorized users to read and write data.
+
+### Attacks on InfoSec
+* An **interruption** attack is an attack on availability.
+* An **interception** attack is an attack on confidentiality.
+* There are two related kinds of attacks on integrity: **modification** attacks which modify already existing data, and **fabrication** attacks which add additional data to the system.
+
+### Active vs. Passive
+* **Active attacks** actually change the system under attack somehow, such as by adding an additional program that runs in the background, changing users passwords, or modifying data stored on the system. 
+* **Passive attacks** do not cause any changes to the system. 
+
+
+## **Selenium Notes (for Ryan, who tragically had to miss class):**
+
+* selenium grid - can create a multiple computers for distributed testing
+* selenium IDE
+  * extension link: https://chrome.google.com/webstore/detail/selenium-ide/mooikfkahbdckldjjndioackbalphokd?hl=en (also available on FF)
+  * records stuff
+  * easy for beginners
+  * build test via apoint and click reference
+  * point of selenium: to test user interfaces
+* Resources:
+  * http://www.asphaltpanthers.com/
+  * https://www.guru99.com/selenium-tutorial.html <- tutorials
+* At the end of the day, we are comparing actual and expected performance
+* Why code? Because it's more scalable
+* Note: we will have to code in Java for deliverable 3
+
+**Approaches:**
+* Downloading HTML
+ * Why not? 
+  * Not using DOM (using client-side JS)
+  * Very fragile test
+  * No semantic understanding
+  * Test is unreadable (not valid for large sites)
+* Using a testing framework (Selenium, QTP, Catalan (works w/Ruby), Protractor (Angular framework), etc.)
+
+**Selenium IDE:**
+* Example 1: testing web GUI
+ * Open extension
+ * Screen will pop up
+ * Right click - Selenium IDE - assert text
+ * Click Play in the Selenium IDE and it will play
+* Elements of the IDE
+ * Target = web element
+ * On the bottom of the IDEA an use "Reference" to understand methods
+ 
+**Tips:**
+* Can use IDE to record clicking on an object
+* Go to Selenium IDE > Target
+* Will give you a number of selection methods (that you could use)
+* Can move commands around (drag and drop row) 
+* Avoid intermittent failures via `waitForPageToLoad` (waits for another page to load with an optional timeout) 
+ * Note: If you don't wait, Selenium can go faster than the browser and tests will fail :-(
+ * `clickAndWait` (many forms of wait)
+* Explicit wait (set max time to wait for something)
+
+**Selenium IDE Assertions:***
+* `assertText`
+* `assertTextPresent`
+* `assertElementPresent`
+* `assertEditable`
+* `assertAlert`
+* `assertCookie`
+* `assertEval` (Dustin doesn't use)
+
+**Selenium w/Java:***
+* Project - clone this repo: https://github.com/asphaltpanthers/CS1632_Deliverable3
+ * You could also start from scratch... (see presentation for notes)
+ * Selenium JAR file in class path
+* WebDriver <- to manipulate browser (one for every browser)
+ * Setting up driver
+  * `WebDriver driver = HTMLUnitDriver();` // headless, lightweight and faster
+  * `WebDriver driver = new FirefoxDriver();` // actual browser, the most supported driver
+  * //+other drivers 
+ * Navigate to a webpage
+  * `driver.get("https://www.google.com");`
+ * WebElements = anything that makes up a page (div tags, labels, buttons, images, pages)
+  * Driver loads all of there references into hte driver object
+  * Now we can use object selection  methods to get it to do something
+ * Must select element
+  * `driver.findElement()` to find a **specific** WebElement on a page
+  * `driver.findElements()` for more than one WebElement on a page
+  * the (unique) id is always preferred to test agains
+ * Xpath selectors = way of search XMl structure in order to find a tag that we are interested in 
+  * `//h2` xpath that searches for an h2 tag that exists anywhere
+  * `//h1[1]` index locator, give us the second h1 (DON'T USE, it's just brittle)
+  * `//[@id='sub-header']` search anywhere and find the id (@ = some attribute is coming) and will return that element
+* Manipulating web browser
+  * Most common actions `textBox.sendKey("Send text in input box");` and `randomElement.click();`
+  * `F12` or `ctrl+i` Chrome Dev Tools -> Elements panel (use Xpath in the box)
+
+**Coding Examples:**
+* https://github.com/asphaltpanthers/CS1632/tree/master/examples/Lecture13/Lecture13Example/src
+* Create a Base class that all tests work from (very DRY)
+* Should all close the browser (e.g., `driver.quit();`)
+
+Base class: \\ note: Dustin set this up for us in his CS1632_Deliverable 3 repository
+```
+import org.junit.After;
+import org.junit.Before;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.google.common.base.Function;
+
+public class BaseTest {
+	public WebDriver driver;
+	private WebDriverWait wait;
+	
+	@Before
+	public void setup() {
+		System.setProperty("webdriver.gecko.driver", "drivers\\geckodriver.exe");
+		driver = new FirefoxDriver();
+		wait = new WebDriverWait(driver, 30);
+	}
+	
+	@After
+	public void teardown() {
+		driver.quit();
+	}
+	
+	public void waitUntil(Function<WebDriver, Boolean> predicate) {
+		wait.until(predicate);
+	}
+}
+```
+* implicit wait = instructs the test to wait n seconds (Dustin recommends not doing, because it could fail and wastes resources)
+ * `Thread.sleep(5);` (THIS SHOULD NOT BE IN 3RD DELIVERABLE, Dustin will take off points) 
+* explicit wait = has a piece of code that executes until piece of code is true or timeout is reached
+
+```
+WebDriverWait wait = new WebDriverWAit (driver, 30);
+wait.until((Predicate<WebDriver>)w->{
+ //see deck
+};
+```
+
+Example tests (with and without wait):
+```
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+
+public class HelloWorldTest extends BaseTest { //Note: how it extends the BaseClass
+	
+	@Test
+	public void helloWorldTestThatFails() {
+		driver.get("http://www.google.com/"); //get URL
+		
+		driver.findElement(By.xpath("//input[@class = 'gLFyf gsfi']")).sendKeys("Hello World!" + Keys.RETURN); //Find element and insert Hello World and click Enter (i.e., carrage return)
+        
+        //TODO MUST ADD WAIT HERE
+        
+        WebElement rightHandSideHeader = driver.findElement(By.xpath("//div[contains(@class, 'kno-ecr-pt')]")); //this executes fast, must add in line above or it will fail, b/c program is too fast (and it hasn't loaded)
+        assertEquals("\"Hello, World!\" program", rightHandSideHeader.getText());
+        \\ should return false
+	}
+	
+	@Test
+    public void helloWorldTestThatSucceeds() {
+        driver.get("http://www.google.com/");
+        
+        driver.findElement(By.xpath("//input[@class = 'gLFyf gsfi']")).sendKeys("Hello World!" + Keys.RETURN);
+        
+        By rightHandSideSelector = By.xpath("//div[contains(@class, 'kno-ecr-pt')]");
+        waitUntil(d -> d.findElement(rightHandSideSelector).isDisplayed()); // WAIT ADDED :-), explicit wait, loops over code until the element is displayed (called a Lambda method, see BaseClass)
+        assertEquals("\"Hello, World!\" program", driver.findElement(rightHandSideSelector).getText());
+        \\ should return ture
+    }
+}
